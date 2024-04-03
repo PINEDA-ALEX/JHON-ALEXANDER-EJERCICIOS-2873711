@@ -1,32 +1,32 @@
-Algoritmo ejercicio166
+Algoritmo ejercicio177
 	// Definición de variables
-
-	Definir costoHora, tiempoMinutos, puntos, tiempoHoras, montoPagar Como Real;
-    
-    // Solicitar al usuario que ingrese el tiempo en minutos que utilizó la cabina de Internet
-    Escribir "Ingrese el tiempo en minutos que utilizó la cabina de Internet: ";
-    Leer tiempoMinutos;
-    
-    // Definir el costo por hora o fracción
-    costoHora <- 1500;
-    
-    // Convertir los minutos a horas
-    tiempoHoras <- tiempoMinutos / 60;
-    
-    // Calcular el monto a pagar
-    Si tiempoHoras > 3 Entonces;
-        montoPagar <- (3 * costoHora) + ((tiempoHoras - 3) * costoHora * 0.7);
+    Definir salarioActual, nuevoSalario, retefuente, descuentoSaludPension, ahorroProgramado, subsidioAlimentacion Como Real;
+	
+    // Solicitar al usuario que ingrese el salario actual del empleado
+    Escribir "Ingrese el salario actual del empleado: ";
+    Leer salarioActual;
+	
+    // Calcular descuento por préstamo del 20%
+    descuentoPrestamo <- salarioActual * 0.20;
+	
+    // Calcular impuestos y ahorros
+    Si salarioActual > 4000000 Entonces;
+        retefuente <- salarioActual * 0.10;
     Sino
-        montoPagar <- tiempoHoras * costoHora;
+        retefuente <- 0;
     FinSi
-    
-    // Calcular los puntos obtenidos (5 puntos por cada hora)
-    puntos <- tiempoHoras * 5;
-    
-    // Mostrar el monto a pagar y la cantidad de puntos obtenidos
-    Escribir "El monto a pagar es: $", montoPagar;
-    Escribir "La cantidad de puntos obtenidos es: ", puntos;
-
+	
+    descuentoSaludPension <- salarioActual * 0.12;
+    ahorroProgramado <- salarioActual * 0.03;
+	
+    // Calcular subsidio de alimentación del 4%
+    subsidioAlimentacion <- salarioActual * 0.04;
+	
+    // Calcular nuevo salario restando los descuentos e impuestos y sumando el subsidio de alimentación
+    nuevoSalario <- salarioActual - descuentoPrestamo - retefuente - descuentoSaludPension - ahorroProgramado + subsidioAlimentacion;
+	
+    // Mostrar el nuevo salario del empleado
+    Escribir "El nuevo salario del empleado es: $", nuevoSalario;
 
 	
 FinAlgoritmo
